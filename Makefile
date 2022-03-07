@@ -1,5 +1,15 @@
 GO ?= go
 
+VERSION := v0.1.0
+RELEASE_NOTE := "Init"
+
+git-tag:
+	git tag -a $(VERSION) -m $(RELEASE_NOTE)
+	git push github $(VERSION)
+
+release: git-tag
+	goreleaser release
+
 .PHONY: build
 build:
 	$(GO) build
