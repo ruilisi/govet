@@ -1,14 +1,16 @@
 GO ?= go
 
-VERSION := v0.1.0
-RELEASE_NOTE := "Init"
+VERSION := v0.1.2
+RELEASE_NOTE := "Empty denied imports"
 
+.PHONY: git-tag
 git-tag:
 	git tag -a $(VERSION) -m $(RELEASE_NOTE)
 	git push github $(VERSION)
 
-release: git-tag
-	goreleaser release
+.PHONY: release
+release: build git-tag
+	goreleaser release --rm-dist
 
 .PHONY: build
 build:
