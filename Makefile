@@ -1,7 +1,7 @@
 GO ?= go
 
-VERSION := v0.1.0
-RELEASE_NOTE := "Init"
+VERSION := v0.1.1
+RELEASE_NOTE := "Empty denied imports"
 
 git-tag:
 	git tag -a $(VERSION) -m $(RELEASE_NOTE)

@@ -2,4 +2,6 @@
 .idea/
 
 # Binaries
-/gitea-vet*
+/govet*
+
+dist
