@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	deniedImports   = []string{"io/ioutil", "encoding/json"}
+	deniedImports   = []string{} // "io/ioutil", "encoding/json"
 	DenylistImports = &analysis.Analyzer{
 		Name: "denylist_imports",
 		Doc:  "check for denied imports",
